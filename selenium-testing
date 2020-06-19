@@ -1,0 +1,17 @@
+# Import Libraries
+import time
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.keys import Keys
+
+
+driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.get("https://google.com") 
+# Adjusts the size of the Window
+driver.set_window_size(1920, height = 1080)
+time.sleep(1)
+driver.find_element_by_id("cnsd").click()
+google_searchbox = driver.find_element_by_xpath("/html/body/div/div[3]/form/div[2]/div[1]/div[1]/div/div[2]/input")
+time.sleep(2)
+google_searchbox.send_keys("Python Programming Language", Keys.RETURN)
+driver.find_element_by_xpath("//a[@class='q qs']").click()
