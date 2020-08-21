@@ -15,3 +15,6 @@ google_searchbox = driver.find_element_by_xpath("/html/body/div/div[2]/form/div[
 time.sleep(2)
 google_searchbox.send_keys("Python Programming Language", Keys.RETURN)
 driver.find_element_by_xpath("//a[@class='q qs']").click()
+time.sleep(7)
+driver.close()
+quit()
